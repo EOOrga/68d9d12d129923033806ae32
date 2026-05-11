@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="DUPOUY SIBE NATHALIE keeps payroll reports, procurement requests, inventory checks, and work orders organized on Android.">
+  <meta name="theme-color" content="#0157D3">
+  <title>DUPOUY SIBE NATHALIE</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="manifest" href="manifest.json">
+  <style>
+    :root {
+      color-scheme: light;
+      --primary: #0157d3;
+      --secondary: #168f9d;
+      --accent: #54dce7;
+      --ink: #224062;
+      --paper: #f6fafc;
+      --line: #d7e4ec;
+      --success: #2e7d32;
+      --warning: #b86b00;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      letter-spacing: 0;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hero {
+      min-height: 82vh;
+      display: grid;
+      align-items: end;
+      position: relative;
+      isolation: isolate;
+      background: #102438 url("featured.png") center / cover no-repeat;
+      color: white;
+      padding: 24px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(10, 25, 42, 0.9), rgba(10, 25, 42, 0.58) 50%, rgba(10, 25, 42, 0.2));
+    }
+
+    .nav,
+    .hero-content,
+    .section-inner {
+      width: min(1120px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .nav {
+      position: absolute;
+      inset: 20px 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+    }
+
+    .brand img {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .hero-content {
+      padding: 0 0 80px;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 8vw, 86px);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 22px 0 0;
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.86);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid transparent;
+    }
+
+    .button.primary {
+      background: var(--accent);
+      color: #082235;
+    }
+
+    .button.secondary {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: white;
+    }
+
+    section {
+      padding: 56px 0;
+    }
+
+    .section-title {
+      display: grid;
+      gap: 10px;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .section-title h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .section-title p {
+      margin: 0;
+      color: #526579;
+      line-height: 1.6;
+      font-size: 17px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .card p {
+      margin: 0;
+      color: #526579;
+      line-height: 1.55;
+    }
+
+    .tag {
+      width: max-content;
+      border-radius: 999px;
+      padding: 7px 10px;
+      font-weight: 900;
+      font-size: 12px;
+      color: white;
+      background: var(--primary);
+    }
+
+    .workflow {
+      background: white;
+      border-block: 1px solid var(--line);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .step {
+      border-left: 4px solid var(--secondary);
+      padding: 10px 0 10px 16px;
+    }
+
+    .step span {
+      display: block;
+      color: var(--warning);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+      letter-spacing: 0;
+    }
+
+    .step p {
+      margin: 0;
+      color: #526579;
+      line-height: 1.55;
+    }
+
+    footer {
+      padding: 28px 0 36px;
+      color: #526579;
+      border-top: 1px solid var(--line);
+    }
+
+    footer .section-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 820px) {
+      .hero {
+        min-height: 78vh;
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-content {
+        padding-bottom: 52px;
+      }
+
+      .grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" id="top">
+      <nav class="nav" aria-label="Primary">
+        <div class="brand">
+          <img src="favicon.png" alt="">
+          <span>DUPOUY SIBE NATHALIE</span>
+        </div>
+        <div class="nav-links">
+          <a href="#lanes">Lanes</a>
+          <a href="#workflow">Workflow</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+      <div class="hero-content">
+        <h1>DUPOUY SIBE NATHALIE</h1>
+        <p>Offline Android operations tracking for payroll reports, procurement requests, inventory counts, and work orders.</p>
+        <div class="actions">
+          <a class="button primary" href="#lanes">Review operations lanes</a>
+          <a class="button secondary" href="#contact">Contact support</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="lanes">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Daily business tasks in one local workspace.</h2>
+          <p>The Android app keeps records on the device, so routine operational checks can continue without account setup, cloud sync, analytics, or external services.</p>
+        </div>
+        <div class="grid">
+          <article class="card">
+            <div>
+              <strong>Payroll reports</strong>
+              <p>Prepare period reports, track review status, and keep approval notes beside each payroll item.</p>
+            </div>
+            <span class="tag">Finance</span>
+          </article>
+          <article class="card">
+            <div>
+              <strong>Procurement requests</strong>
+              <p>Move purchases from request to order to receipt with owners, budgets, dates, and notes.</p>
+            </div>
+            <span class="tag">Purchasing</span>
+          </article>
+          <article class="card">
+            <div>
+              <strong>Inventory tracking</strong>
+              <p>Watch reorder items, cycle count tasks, and on-hand units for stockroom follow-up.</p>
+            </div>
+            <span class="tag">Stock</span>
+          </article>
+          <article class="card">
+            <div>
+              <strong>Work orders</strong>
+              <p>Queue maintenance and operational tasks with assigned teams, due dates, and closure status.</p>
+            </div>
+            <span class="tag">Tasks</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="workflow" id="workflow">
+      <div class="section-inner">
+        <div class="section-title">
+          <h2>Designed for repeated operations reviews.</h2>
+          <p>Teams can add records as work arrives, check the attention queue, update status, and keep local settings aligned with the current operating rhythm.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <span>01</span>
+            <h3>Create the record</h3>
+            <p>Add the owner, value, due date, and notes for the current operational item.</p>
+          </div>
+          <div class="step">
+            <span>02</span>
+            <h3>Track the lane</h3>
+            <p>Use dedicated screens for payroll, procurement, inventory, and work orders.</p>
+          </div>
+          <div class="step">
+            <span>03</span>
+            <h3>Close the loop</h3>
+            <p>Update status during review and keep completed work visible in the local record history.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contact">
+    <div class="section-inner">
+      <strong>DUPOUY SIBE NATHALIE</strong>
+      <span>Support email: support@dupouysibenathalie.fr</span>
+    </div>
+  </footer>
+</body>
+</html>

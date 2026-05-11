@@ -1,0 +1,6 @@
+using $gpc-app-builder  create this app
+app title: DUPOUY SIBE NATHALIE
+app idea: An operations-focused app offering payroll reports, procurement requests, inventory tracking, and work orders to streamline daily business tasks.
+company name: DUPOUY SIBE NATHALIE
+email address: [email to be provided later]
+the two icon and featured graphics contained in docs folder
