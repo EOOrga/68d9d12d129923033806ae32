@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "applications": {
+    "com.dupouysibenathalie.operations": {
+      "title": "DUPOUY SIBE NATHALIE",
+      "short_description": "Track payroll, procurement, inventory, and work orders offline.",
+      "full_description": "DUPOUY SIBE NATHALIE gives operations teams a practical Android workspace for daily business records. Use it to prepare payroll reports, follow procurement requests, review stock items, and manage work orders from one device.\n\nEach lane includes local records with owners, values, due dates, notes, and status updates. The dashboard highlights open work and due items so daily reviews stay focused.\n\nThe app works without account registration, cloud sync, analytics, ads, or external services. Records and preferences remain in local app storage on the device.",
+      "source_screenshots": [
+        "docs/screens/1_dashboard.png",
+        "docs/screens/2_payroll.png",
+        "docs/screens/3_requests.png"
+      ],
+      "generated_from": "existing repository listing metadata and README",
+      "generated_at": "2026-10-02T21:20:38.452435+00:00"
+    }
+  }
+}
