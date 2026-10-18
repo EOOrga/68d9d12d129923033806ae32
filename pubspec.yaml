@@ -1,4 +1,4 @@
-name: dupouy_sibe_nathalie
+name: official
 description: Offline operations workspace for payroll, procurement, inventory, and work orders.
 publish_to: 'none'
 version: 1.0.0+1
@@ -28,5 +28,5 @@ flutter_launcher_icons:
   ios: false
   image_path: docs/icon.png
   min_sdk_android: 23
-  adaptive_icon_background: '#F6FAFC'
+  adaptive_icon_background: "#558B2F"
   adaptive_icon_foreground: docs/icon.png
