@@ -28,7 +28,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.dupouysibenathalie.operations"
+        applicationId = "com.dupouysibenathalie.sbikloz"
         minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
