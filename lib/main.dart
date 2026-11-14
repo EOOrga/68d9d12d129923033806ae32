@@ -451,7 +451,7 @@ List<OpsRecord> sampleRecords() {
     OpsRecord(
       id: 'payroll-may',
       area: OpsArea.payroll,
-      title: 'May payroll reconciliation',
+      title: 'DUPOUY SIBE NATHALIE',
       owner: 'Finance desk',
       status: 'Reviewed',
       amount: 48200,
